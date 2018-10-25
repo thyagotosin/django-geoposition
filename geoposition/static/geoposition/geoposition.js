@@ -1,6 +1,12 @@
 if (jQuery != undefined) {
-    var django = {
-        'jQuery': jQuery,
+    if (django ==  undefined) {
+        var django = {
+            'jQuery': jQuery,
+        }
+    } else {
+        if (django['jQuery'] == undefined) {
+            django['jQuery'] = jQuery;
+        }
     }
 }
 
