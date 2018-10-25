@@ -1,9 +1,11 @@
 from __future__ import unicode_literals
 
 import json
+
 from django import forms
 from django.utils import six
 from django.utils.translation import ugettext_lazy as _
+
 from .conf import settings
 
 
