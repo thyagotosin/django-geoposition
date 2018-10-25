@@ -39,7 +39,7 @@ if (jQuery != undefined) {
                 $mapContainer = $('<div class="geoposition-map" />'),
                 $addressRow = $('<div class="geoposition-address" />'),
                 $searchRow = $('<div class="geoposition-search" />'),
-                $searchInput = $('<input>', {'type': 'search', 'placeholder': 'Start typing an address …'}),
+                $searchInput = $('<input>', {'type': 'search', 'placeholder': 'Rechercher une adresse …'}),
                 $latitudeField = $container.find('input.geoposition:eq(0)'),
                 $longitudeField = $container.find('input.geoposition:eq(1)'),
                 latitude = parseFloat($latitudeField.val()) || null,
@@ -51,6 +51,9 @@ if (jQuery != undefined) {
                 markerOptions,
                 markerCustomOptions,
                 marker;
+
+            console.log('latitude');
+            console.log($latitudeField.val());
 
             $mapContainer.css('height', $container.attr('data-map-widget-height') + 'px');
             mapCustomOptions = JSON.parse($container.attr('data-map-options'));
@@ -126,7 +129,7 @@ if (jQuery != undefined) {
                 $(this).parent().find('ul.geoposition-results').remove();
             });
             $searchInput.appendTo($searchRow);
-            $container.append($searchRow, $mapContainer, $addressRow);
+            $container.append($searchRow, $addressRow, $mapContainer);
 
             mapLatLng = new google.maps.LatLng(latitude, longitude);
 
