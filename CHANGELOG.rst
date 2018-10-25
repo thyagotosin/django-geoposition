@@ -1,3 +1,10 @@
+Version 0.3.3 (2018-10-25)
+==========================
+
+*   Add support for Django version 2.x
+*   Fix for django global variable conflict
+
+
 Version 0.3.0 (2016-08-05)
 ==========================
 
