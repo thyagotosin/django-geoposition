@@ -4,22 +4,17 @@ django-geoposition
 
 A model field that can hold a geoposition (latitude/longitude), and corresponding admin/form widget.
 
-.. image:: https://badge.fury.io/py/django-geoposition.svg
-   :target: https://badge.fury.io/py/django-geoposition
+.. image:: https://badge.fury.io/py/django-geoposition-2.svg
+   :target: https://badge.fury.io/py/django-geoposition-2
 
-.. image:: https://travis-ci.org/philippbosch/django-geoposition.svg?branch=master
-   :target: https://travis-ci.org/philippbosch/django-geoposition
+.. image:: https://travis-ci.org/imdario/django-geoposition.svg?branch=master
+   :target: https://travis-ci.org/imdario/django-geoposition
 
-.. image:: https://badges.gitter.im/philippbosch/django-geoposition.svg
-   :alt: Join the chat at https://gitter.im/philippbosch/django-geoposition
-   :target: https://gitter.im/philippbosch/django-geoposition?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
 Prerequisites
 -------------
 
-Starting with version 0.3, django-geoposition requires Django 1.8 or greater.
-If you need to support Django versions prior to 1.8 please use django-geoposition 0.2.3.
-For Django versions prior to 1.4.10 please use django-geoposition 0.1.5.
+Please use from version 0.3.4. Previous versions had several unsolved issues by their original maintainers. django-geoposition requires Django 1.8 or greater.
 
 
 Installation
@@ -43,9 +38,6 @@ Installation
 
   API keys may be obtained here: https://developers.google.com/maps/documentation/javascript/get-api-key
 
-- If you are still using Django <1.3, you are advised to install
-  `django-staticfiles`_ for static file serving.
-
 
 Usage
 -----
@@ -65,8 +57,9 @@ it:
 
 - This enables the following simple API::
 
+    >>> from geoposition import Geoposition
     >>> from myapp.models import PointOfInterest
-    >>> poi = PointOfInterest.objects.get(id=1)
+    >>> poi = PointOfInterest.objects.create(name='Foo', position=Geoposition(52.522906, 13.41156))
     >>> poi.position
     Geoposition(52.522906,13.41156)
     >>> poi.position.latitude
@@ -145,7 +138,6 @@ License
 
 
 .. _PyPI: http://pypi.python.org/pypi/django-geoposition
-.. _django-staticfiles: http://github.com/jezdez/django-staticfiles
 .. _Google Maps: http://code.google.com/apis/maps/documentation/javascript/
 .. |geoposition-widget-admin| image:: docs/images/geoposition-widget-admin.jpg
 .. _jQuery: http://jquery.com
