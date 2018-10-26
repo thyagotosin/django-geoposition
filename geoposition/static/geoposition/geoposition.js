@@ -14,7 +14,6 @@ if (jQuery != undefined) {
 (function($) {
 
     $(document).ready(function() {
-
         try {
             var _ = google;
         } catch (ReferenceError) {
@@ -39,7 +38,7 @@ if (jQuery != undefined) {
                 $mapContainer = $('<div class="geoposition-map" />'),
                 $addressRow = $('<div class="geoposition-address" />'),
                 $searchRow = $('<div class="geoposition-search" />'),
-                $searchInput = $('<input>', {'type': 'search', 'placeholder': 'Rechercher une adresse …'}),
+                $searchInput = $('<input>', {'type': 'text', 'placeholder': django.gettext('Input an address...')}),
                 $latitudeField = $container.find('input.geoposition:eq(0)'),
                 $longitudeField = $container.find('input.geoposition:eq(1)'),
                 latitude = parseFloat($latitudeField.val()) || null,
@@ -52,16 +51,13 @@ if (jQuery != undefined) {
                 markerCustomOptions,
                 marker;
 
-            console.log('latitude');
-            console.log($latitudeField.val());
-
             $mapContainer.css('height', $container.attr('data-map-widget-height') + 'px');
             mapCustomOptions = JSON.parse($container.attr('data-map-options'));
             markerCustomOptions = JSON.parse($container.attr('data-marker-options'));
 
             function doSearch() {
                 var gc = new google.maps.Geocoder();
-                $searchInput.parent().find('ul.geoposition-results').remove();
+                $mapContainer.parent().find('ul.geoposition-results').remove();
                 gc.geocode({
                     'address': $searchInput.val()
                 }, function(results, status) {
@@ -89,7 +85,7 @@ if (jQuery != undefined) {
                                 });
                                 $li.appendTo($ul);
                             });
-                            $searchInput.after($ul);
+                            $mapContainer.after($ul);
                         }
                     }
                 });
@@ -129,7 +125,7 @@ if (jQuery != undefined) {
                 $(this).parent().find('ul.geoposition-results').remove();
             });
             $searchInput.appendTo($searchRow);
-            $container.append($searchRow, $addressRow, $mapContainer);
+            $container.append($searchRow, $mapContainer, $addressRow);
 
             mapLatLng = new google.maps.LatLng(latitude, longitude);
 
