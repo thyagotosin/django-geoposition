@@ -89,7 +89,6 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
-
 # -- Options for HTML output ---------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -169,7 +168,6 @@ html_theme = 'default'
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'django-geopositiondoc'
 
-
 # -- Options for LaTeX output --------------------------------------------------
 
 # The paper size ('letter' or 'a4').
@@ -181,8 +179,8 @@ htmlhelp_basename = 'django-geopositiondoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'django-geoposition.tex', u'django-geoposition Documentation',
-   u'Philipp Bosch', 'manual'),
+    ('index', 'django-geoposition.tex', u'django-geoposition Documentation',
+     u'Philipp Bosch', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -208,16 +206,12 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_domain_indices = True
 
-
 # -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    ('index', 'django-geoposition', u'django-geoposition Documentation',
-     [u'Philipp Bosch'], 1)
-]
-
+man_pages = [('index', 'django-geoposition',
+              u'django-geoposition Documentation', [u'Philipp Bosch'], 1)]
 
 # -- Options for Epub output ---------------------------------------------------
 

@@ -3,7 +3,8 @@ from setuptools import setup, find_packages
 setup(
     name='django-geoposition-2',
     version=__import__('geoposition').__version__,
-    description='Django model field that can hold a geoposition, and corresponding admin widget.',
+    description=
+    'Django model field that can hold a geoposition, and corresponding admin widget.',
     author='Dario Castañé',
     author_email='i@dario.im',
     url='http://github.com/imdario/django-geoposition',
@@ -24,5 +25,4 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Framework :: Django',
-    ]
-)
+    ])

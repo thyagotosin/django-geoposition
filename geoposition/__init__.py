@@ -27,7 +27,11 @@ class Geoposition(object):
         return len(str(self))
 
     def __eq__(self, other):
-        return isinstance(other, Geoposition) and self.latitude == other.latitude and self.longitude == other.longitude
+        return isinstance(
+            other, Geoposition
+        ) and self.latitude == other.latitude and self.longitude == other.longitude
 
     def __ne__(self, other):
-        return not isinstance(other, Geoposition) or self.latitude != other.latitude or self.longitude != other.longitude
+        return not isinstance(
+            other, Geoposition
+        ) or self.latitude != other.latitude or self.longitude != other.longitude

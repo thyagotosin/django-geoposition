@@ -50,8 +50,6 @@ class GeopositionField(models.Field):
         return smart_text(value)
 
     def formfield(self, **kwargs):
-        defaults = {
-            'form_class': GeopositionFormField
-        }
+        defaults = {'form_class': GeopositionFormField}
         defaults.update(kwargs)
         return super(GeopositionField, self).formfield(**defaults)

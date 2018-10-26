@@ -5,7 +5,4 @@ from example import views
 
 admin.autodiscover()
 
-urlpatterns = [
-    path('', views.poi_list),
-    path('admin/', admin.site.urls)
-]
+urlpatterns = [path('', views.poi_list), path('admin/', admin.site.urls)]

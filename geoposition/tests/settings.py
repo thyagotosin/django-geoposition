@@ -20,7 +20,7 @@ INSTALLED_APPS = (
     'example',
 )
 
-MIDDLEWARE  = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,7 +61,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
 
 GEOPOSITION_MAP_WIDGET_HEIGHT = 500
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'DUMMY'
