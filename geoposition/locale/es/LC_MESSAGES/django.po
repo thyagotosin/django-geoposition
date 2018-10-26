@@ -32,3 +32,7 @@ msgstr "latitud"
 #: .\geoposition\forms.py:19 .\geoposition\widgets.py:33
 msgid "longitude"
 msgstr "longitud"
+
+#: .\geoposition\static\geoposition\geoposition.js:42
+msgid "Input an address..."
+msgstr "Introduzca una dirección..."
