@@ -20,7 +20,7 @@ class GeopositionWidget(forms.MultiWidget):
         super(GeopositionWidget, self).__init__(widgets, attrs)
 
     def get_context(self, name, value, attrs):
-        context = super().get_context(name, value, attrs)
+        context = super(GeopositionWidget, self).get_context(name, value, attrs)
         if not isinstance(value, list):
             value = self.decompress(value)
         if 'widget' not in context:
