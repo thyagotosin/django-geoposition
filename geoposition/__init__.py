@@ -3,7 +3,7 @@ from decimal import Decimal
 
 default_app_config = 'geoposition.apps.GeoPositionConfig'
 
-VERSION = (0, 3, 4)
+VERSION = (0, 3, 6)
 __version__ = '.'.join(map(str, VERSION))
 
 

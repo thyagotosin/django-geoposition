@@ -32,11 +32,17 @@ Installation
         "geoposition",
     )
 
-- Set your Google API key in you settings file::
+- If you want to use Google Maps, set your Google API key in your settings file::
 
     GEOPOSITION_GOOGLE_MAPS_API_KEY = 'YOUR_API_KEY'
 
   API keys may be obtained here: https://developers.google.com/maps/documentation/javascript/get-api-key
+
+- If you want to use OpenStreetMap, activate Leaflet backend in your settings file:
+
+    GEOPOSITION_BACKEND = 'leaflet'
+
+  As Leaflet is provider agnostic, you could use any other map provider from the following list: http://leaflet-extras.github.io/leaflet-providers/preview
 
 
 Usage
