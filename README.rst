@@ -1,6 +1,7 @@
 ==================
 django-geoposition
 ==================
+A fork of [django-geoposition](https://github.com/philippbosch/django-geoposition)
 
 A model field that can hold a geoposition (latitude/longitude), and corresponding admin/form widget.
 
@@ -23,7 +24,7 @@ Installation
 - Use your favorite Python packaging tool to install ``geoposition``
   from `PyPI`_, e.g.::
 
-    pip install django-geoposition
+    pip install django-geoposition-2
 
 - Add ``"geoposition"`` to your ``INSTALLED_APPS`` setting::
 
