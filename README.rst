@@ -1,7 +1,7 @@
 ==================
 django-geoposition
 ==================
-A fork of [django-geoposition](https://github.com/philippbosch/django-geoposition)
+A fork of `django-geoposition`_.
 
 A model field that can hold a geoposition (latitude/longitude), and corresponding admin/form widget.
 
@@ -144,6 +144,7 @@ License
 `MIT`_
 
 
+.. _django-geoposition: https://github.com/philippbosch/django-geoposition
 .. _PyPI: http://pypi.python.org/pypi/django-geoposition
 .. _Google Maps: http://code.google.com/apis/maps/documentation/javascript/
 .. |geoposition-widget-admin| image:: docs/images/geoposition-widget-admin.jpg
