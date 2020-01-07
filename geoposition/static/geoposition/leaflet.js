@@ -110,11 +110,8 @@ if (jQuery != undefined) {
 
             if (isDjangoAdmin) {
                 // refresh map if active custom tab changed
-                $(mapOptions.parentSelector).on('click', function() {
+                $container.parents(mapOptions.parentSelector).on('click', function() {
                     map.invalidateSize();
-                    setTimeout(function() {
-                        map.invalidateSize();
-                    }, 400);
                 });
             } else {
                 // refresh map if inside jquery ui tabs widget and active tab changed
