@@ -35,7 +35,9 @@ if (jQuery != undefined) {
                     maxZoom: 19,
                     dataZoom: 16,
                     initialZoom: 2,
-                    initialCenter: [25, 0]
+                    initialCenter: [25, 0],
+                    parentSelector: '#tabs',
+                    isDjangoAdmin: false
                 },
                 mapNonProviderOptions = ['url', 'dataZoom', 'initialZoom', 'initialCenter'],
                 mapProviderOptions = {},
@@ -105,11 +107,21 @@ if (jQuery != undefined) {
             $latitudeField.add($longitudeField).bind('keyup', function() {
                 setMarker(getLatLng());
             });
-            
-            // refresh map if inside jquery ui tabs widget and active tab changed
-            $container.parents('#tabs').on('tabsactivate', function() {
-                map.invalidateSize();
-            });
+
+            if (isDjangoAdmin) {
+                // refresh map if active custom tab changed
+                $(mapOptions.parentSelector).on('click', function() {
+                    map.invalidateSize();
+                    setTimeout(function() {
+                        map.invalidateSize();
+                    }, 400);
+                });
+            } else {
+                // refresh map if inside jquery ui tabs widget and active tab changed
+                $container.parents(mapOptions.parentSelector).on('tabsactivate', function() {
+                    map.invalidateSize();
+                });
+            }
         });
     });
 })(django.jQuery);

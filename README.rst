@@ -123,6 +123,8 @@ map and marker in JavaScript by defining ``GEOPOSITION_MAP_OPTIONS`` or
     GEOPOSITION_MAP_OPTIONS = {
         'minZoom': 3,
         'maxZoom': 15,
+        'parentSelector': 'li.changeform-tabs-item',
+        'isDjangoAdmin': True
     }
 
     GEOPOSITION_MARKER_OPTIONS = {
