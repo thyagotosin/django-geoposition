@@ -110,7 +110,7 @@ if (jQuery != undefined) {
 
             if (mapOptions.isDjangoAdmin) {
                 // refresh map if active custom tab changed
-                $container.parents(mapOptions.parentSelector).on('click', function() {
+                $(mapOptions.parentSelector).on('click', function() {
                     map.invalidateSize();
                 });
             } else {
