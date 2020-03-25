@@ -1,12 +1,19 @@
 from __future__ import unicode_literals
 
 import json
+import sys
 
 from django import forms
-from django.utils import six
 from django.utils.translation import ugettext_lazy as _
 
 from .conf import settings
+
+
+PY2 = sys.version_info[0] == 2
+if PY2:
+    text_type = unicode
+else:
+    text_type = str
 
 
 class GeopositionWidget(forms.MultiWidget):
@@ -73,7 +80,7 @@ class GeopositionWidget(forms.MultiWidget):
         return context
 
     def decompress(self, value):
-        if isinstance(value, six.text_type):
+        if isinstance(value, text_type):
             return value.rsplit(',')
         if value:
             return [value.latitude, value.longitude]

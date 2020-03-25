@@ -39,7 +39,8 @@ class GeopositionField(models.Field):
 
         return Geoposition(latitude, longitude)
 
-    def from_db_value(self, value, expression, connection, context):
+    # TODO: drop context parameter when dropping 1.11 support
+    def from_db_value(self, value, expression, connection, context=None):
         return self.to_python(value)
 
     def get_prep_value(self, value):
